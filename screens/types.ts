@@ -26,5 +26,8 @@ export type RootStackParamList = {
     Signin: {
         isSignUp?: boolean;
     };
+    Welcome: {
+        uid?: string;
+    };
 };
 export type RootStackNavigationProp = NativeStackNavigationProp<RootStackParamList>;

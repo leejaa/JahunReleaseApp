@@ -1,6 +1,6 @@
 import React from 'react';
-import { createContext, useContext, useState } from "react";
-import { User } from "../api/types";
+import { createContext, useContext, useState } from 'react';
+import { User } from '../api/types';
 
 type UserContextState = [User | null, (user: User | null) => void];
 
@@ -8,15 +8,13 @@ const UserContext = createContext<UserContextState | null>(null);
 
 export function UserContextProvider({ children }: { children: React.ReactNode }) {
     const userState = useState<User | null>(null);
-    return (
-        <UserContext.Provider value={userState}>{children}</UserContext.Provider>
-    );
+    return <UserContext.Provider value={userState}>{children}</UserContext.Provider>;
 }
 
 export function useUserState() {
-    const userState = useContext(UserContext);
-    if (!userState) {
+    const userContext = useContext(UserContext);
+    if (!userContext) {
         throw new Error('UserContext is not used');
     }
-    return userState;
+    return userContext;
 }

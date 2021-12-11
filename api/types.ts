@@ -1,4 +1,4 @@
-import { AxiosError } from "axios"
+import { AxiosError } from 'axios';
 
 export interface User {
     id: number;
@@ -41,7 +41,7 @@ type AuthErrorData = {
         id: string;
         message: string;
     }[];
-}
+};
 
 export type AuthError = AxiosError<{
     statusCode: number;
