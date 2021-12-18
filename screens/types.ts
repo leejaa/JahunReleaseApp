@@ -29,5 +29,10 @@ export type RootStackParamList = {
     Welcome: {
         uid?: string;
     };
+    Feed: undefined;
+    MyProfile: undefined;
+    Upload: {
+        res: any;
+    };
 };
 export type RootStackNavigationProp = NativeStackNavigationProp<RootStackParamList>;

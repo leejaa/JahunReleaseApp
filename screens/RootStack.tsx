@@ -9,6 +9,8 @@ import useAuthLoadEffect from '../hooks/useAuthLoadEffect';
 import WriteScreen from './WriteScreen';
 import SignInScreen from './SignInScreen';
 import WelcomScreen from './WelcomeScreen';
+import FeedScreen from './FeedScreen';
+import UploadScreen from '../components/UploadScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +26,12 @@ function RootStack() {
             <Stack.Screen name="Write" component={WriteScreen} options={{ title: '새 게시글 작성' }} />
             <Stack.Screen name="Signin" component={SignInScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Welcome" component={WelcomScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Feed" component={FeedScreen} />
+            <Stack.Screen
+                name="Upload"
+                component={UploadScreen}
+                options={{ title: '새 게시물', headerBackTitle: '뒤로가기' }}
+            />
         </Stack.Navigator>
     );
 }

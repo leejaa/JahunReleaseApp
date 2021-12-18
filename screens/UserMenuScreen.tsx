@@ -20,6 +20,14 @@ function UserMenuScreen() {
         authStorage.clear();
     };
 
+    const onFeed = () => {
+        navigation.navigate('Feed');
+    };
+
+    const onMyProfile = () => {
+        navigation.navigate('MyProfile');
+    };
+
     return (
         <View>
             {user ? (
@@ -28,6 +36,8 @@ function UserMenuScreen() {
                 <>
                     <MenuItem name="로그인" onPress={onLogin} />
                     <MenuItem name="회원가입" onPress={onRegister} />
+                    <MenuItem name="Feed" onPress={onFeed} />
+                    <MenuItem name="MyProfile" onPress={onMyProfile} />
                 </>
             )}
         </View>
